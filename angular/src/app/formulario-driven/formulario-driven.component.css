@@ -1,0 +1,14 @@
+/* .form-control {
+    color: hotpink;
+}*/
+.valido {
+    border-color: green;
+}
+
+.invalido {
+    border-color: red;   
+}
+/*
+.ng-untouched {
+    background-color: indigo;
+} */

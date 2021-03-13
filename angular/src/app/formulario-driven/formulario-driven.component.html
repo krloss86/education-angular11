@@ -1,0 +1,35 @@
+<p>
+    Formulario  de registro:
+</p>
+<form 
+    #formulario="ngForm"
+    (submit)="submitForm(formulario)">
+    <p>Email:</p>
+    <input type="email"  
+        [class]="{'invalido': formulario.invalid && formulario.touched, 'valido':formulario.valid}"
+        id="email"
+        name="email"
+        ngModel
+        required
+        #email="ngModel"
+        (change)="log(email)">
+
+     <button type="submit" [disabled]="formulario.invalid">
+         Enviar Formulario
+     </button>
+     <button type="reset">
+        Reset
+    </button>
+</form>
+<br>
+<p>Información del formulario</p>
+<ul>
+    <li>values: {{formulario.value | json}}</li>    
+    <li>valid: {{formulario.valid}}</li>    
+    <li>invalid: {{formulario.invalid}}</li>    
+    <li>pristine: {{formulario.pristine}}</li> 
+    <li>dirty: {{formulario.dirty}}</li> 
+    <li>tocuched: {{formulario.touched}}</li>
+    <li>submitted: {{formulario.submitted}}</li>
+</ul>
+

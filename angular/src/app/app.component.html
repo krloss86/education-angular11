@@ -1,0 +1,25 @@
+<!-- soy el app.component.html e incluyo al "router-outlet" -->
+<!--
+    lo vamos a usar cuando veamos rutas 
+    <router-outlet></router-outlet>
+ -->
+ <div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <input type="text" name="email" [(ngModel)]="email">     
+            <p>{{email}}</p>
+            <button (click)="cambiarValor()">
+                Cambiar Valor
+            </button>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            <app-formulario-driven></app-formulario-driven>
+        </div>
+        <div class="col">
+            <app-formulario-reactive [emailRecibidoDelPadre]='email'></app-formulario-reactive>
+        </div>
+    </div>
+</div>
