@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   titulo: '',
-  url: 'http://localhost:8080/unservicio'
+  url: 'https://reqres.in'
 };
 
 /*

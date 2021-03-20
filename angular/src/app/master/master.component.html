@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col">
+        <input [(ngModel)]="nombre">
+        <button (click)="addAlumno()">
+            Agregar Alumno
+        </button>
+    </div>
+</div>
+<!--
+<ul>
+    <li *ngFor="let alumno of alumnos">
+        {{alumno}}
+        <button (click)="removeAlumno(alumno)">
+            Quitar Alumno
+        </button>
+    </li>
+</ul>
+-->
+<app-detail 
+    [alumnos]='alumnos'
+    (aliminarAlumnoPadre)="eliminarAlumno($event)"
+></app-detail>
+

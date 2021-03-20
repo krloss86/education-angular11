@@ -1,8 +1,11 @@
-<!-- soy el app.component.html e incluyo al "router-outlet" -->
+<!--
+    soy el app.component.html e incluyo al "router-outlet" 
+-->
 <!--
     lo vamos a usar cuando veamos rutas 
-    <router-outlet></router-outlet>
- -->
+-->
+<router-outlet></router-outlet>
+<!--
  <div class="container">
     <div class="row mt-5">
         <div class="col-12">
@@ -22,4 +25,24 @@
             <app-formulario-reactive [emailRecibidoDelPadre]='email'></app-formulario-reactive>
         </div>
     </div>
+    <hr/>
+-->
+<!--
+    {{alumnos | json}}
+
+    <div class="row">
+        <app-masterv1 
+            [alumnos]="alumnos"
+            (eliminarEnPadre)="eliminarAlumno($event)"
+        ></app-masterv1>            
+    </div>
 </div>
+
+<div class="container">
+    <div class="row mt-5">
+        <app-master></app-master>
+    </div>
+</div>
+-->
+<!-- <app-login></app-login> -->
+<!-- <app-home></app-home> -->

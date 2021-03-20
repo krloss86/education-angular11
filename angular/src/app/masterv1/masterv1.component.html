@@ -1,0 +1,26 @@
+<div class="col-12">
+    <ul class="list-group">
+        <li class="list-group-item" 
+        *ngFor="let alumno of alumnosLocal">
+            <a class=""
+                (click)="eliminarAlumnoHijo(alumno)">
+                    {{alumno}}
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="col-12 mt-2">
+    <form class="form-inline"
+        [formGroup]="formulario"
+        (ngSubmit)="submitForm()">
+        <div class="form-group mb-2">
+            <label for="staticEmail2" class="sr-only">Nuevo Alumno</label>
+            <input 
+                formControlName="nuevoAlumno"                
+                type="text" class="form-control" id="staticEmail2" value="">
+        </div>        
+        <button type="submit" class="btn btn-primary mb-2">
+            Agregar alumnos
+        </button>
+    </form>
+</div>

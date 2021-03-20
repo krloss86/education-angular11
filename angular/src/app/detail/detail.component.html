@@ -1,0 +1,9 @@
+<p>Lista de alumnos</p>
+<ul>
+    <li *ngFor="let alumno of alumnos">
+        {{alumno}}
+        <button (click)="removeAlumno(alumno)">
+            Quitar Alumno
+        </button>
+    </li>
+</ul>
