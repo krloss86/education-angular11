@@ -14,7 +14,6 @@ export class HomeGuardService implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    debugger;
     let userLogger = this.authService.currentUser();
     if(!userLogger) {
       this.router.navigate(['/login']);

@@ -1,0 +1,17 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Datos Equipo</h6>
+    </div>
+    <div class="card-body">
+      <div class="row" *ngIf="equipo && equipo.datosEquipo.length > 0">
+          <div *ngFor="let dato of equipo.datosEquipo" class="col-lg-6">
+              <div class="card mb-4 border-bottom-success">
+                <div class="card-body">
+                  {{dato.titulo}} : {{dato.dato}}
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  

@@ -16,6 +16,10 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SaldoComponent } from './saldo/saldo.component';
+import { DatosEquipoComponent } from './datos-equipo/datos-equipo.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { RecomendacionComponent } from './recomendacion/recomendacion.component';
 
 //decorator
 @NgModule(
@@ -31,7 +35,11 @@ import { HttpClientModule } from '@angular/common/http';
       FooterComponent,
       HomeComponent,
       NavbarComponent,
-      TopbarComponent
+      TopbarComponent,
+      SaldoComponent,
+      DatosEquipoComponent,
+      ContactoComponent,
+      RecomendacionComponent
     ],
     imports: [//para módulos
       BrowserModule,
