@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClienteDataService } from '../cliente-data.service';
-import { ClienteService } from '../cliente.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserProfile } from '../../model/user-profile';
+import { ClienteDataService } from '../../services/cliente-data.service';
+import { ClienteService } from '../../services/cliente.service';
 
 @Component({
   selector: 'app-topbar',
@@ -15,15 +18,19 @@ export class TopbarComponent implements OnInit {
   loading= false;
   submitted= false;
 
+  userProfile: UserProfile;
+
   constructor(
     private clienteService: ClienteService,
     private clienteDataService: ClienteDataService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: ActivatedRoute
   ) { 
     this.searchForm = this.buildSearchForm();
   }
 
   ngOnInit(): void {
+    this.userProfile = this.router.snapshot.data.userProfile;
   }
 
   buildSearchForm() {

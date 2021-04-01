@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Saldos } from '../informacion-cliente';
+import { Saldos } from '../../model/informacion-cliente';
 
 @Component({
   selector: 'app-saldo',

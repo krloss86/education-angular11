@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { CanComponenetDeactivate } from '../can-exit-guard.service';
-import { ClienteDataService } from '../cliente-data.service';
-import { InformacionCliente } from '../informacion-cliente';
+import { LoginService } from '../../../login.service';
+import { InformacionCliente } from '../../model/informacion-cliente';
+import { CanComponenetDeactivate } from '../../services/can-exit-guard.service';
+import { ClienteDataService } from '../../services/cliente-data.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,6 @@ export class HomeComponent implements CanComponenetDeactivate {
 
   unSaved: boolean = true;
 
-  
   canDeactivate(): Observable<boolean> | boolean {
     if(this.unSaved) {
       const result = window.confirm('¿Hay cambios sin guardar, confirma salir?');
@@ -28,7 +29,9 @@ export class HomeComponent implements CanComponenetDeactivate {
   informacionCliente: InformacionCliente;
 
   constructor(
-    private clienteDataService: ClienteDataService
+    private clienteDataService: ClienteDataService,
+    private authenticationService: LoginService,
+    private router: Router
   ) {
     this.clienteDataService.getInformacionCliente().subscribe(
       data => {
@@ -36,8 +39,13 @@ export class HomeComponent implements CanComponenetDeactivate {
       },error => {
         console.log(error);
       }
-
     );
   }
 
+  executeLogout(): void {
+    //usar el servicio 
+    this.authenticationService.logout();
+    //router para navegar login
+    this.router.navigate(['/login']);
+  }
 }

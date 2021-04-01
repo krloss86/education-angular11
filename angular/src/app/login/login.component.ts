@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { AlertService } from '../commons/services/alert.service';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -20,7 +21,9 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: LoginService
+    private authenticationService: LoginService,
+    private alertService: AlertService
+
   ) { }
 
   ngOnInit(): void {
@@ -51,7 +54,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         error =>{
-          alert('User/Password invalid');
+          // alert('User/Password invalid');
+          this.alertService.error('User/Password invalid');
           this.loading = false;
         }
       );

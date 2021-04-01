@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Recomendaciones } from '../informacion-cliente';
+import { Recomendaciones } from '../../model/informacion-cliente';
 
 @Component({
   selector: 'app-recomendacion',
