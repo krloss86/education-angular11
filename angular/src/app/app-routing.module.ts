@@ -1,19 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginGuardService } from './login-guard.service';
-import { LoginComponent } from './login/login.component';
+import { NoEcontradoComponent } from './no-econtrado/no-econtrado.component';
 
 //configuramos las rutas de la aplicacion
 const routes: Routes = [
   {
-    path: '',
-    component: LoginComponent 
-  },
-  {
-    path: 'login', component: LoginComponent, canActivate: [LoginGuardService] 
+    path: '',   pathMatch: 'full', redirectTo: '/home'
   },  
   {
-    path: '**', component:  LoginComponent 
+    path: '**', component:  NoEcontradoComponent
   }
 ];
 

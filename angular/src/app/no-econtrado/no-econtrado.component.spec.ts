@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { NoEcontradoComponent } from './no-econtrado.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('NoEcontradoComponent', () => {
+  let component: NoEcontradoComponent;
+  let fixture: ComponentFixture<NoEcontradoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ NoEcontradoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(NoEcontradoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

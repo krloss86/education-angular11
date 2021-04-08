@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { LoginService } from '../../../login.service';
+import { LoginService } from '../../../login/services/login.service';
 import { InformacionCliente } from '../../model/informacion-cliente';
 import { CanComponenetDeactivate } from '../../services/can-exit-guard.service';
 import { ClienteDataService } from '../../services/cliente-data.service';
+//declarar la funcion
+declare function initJsFromTs(): any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements CanComponenetDeactivate {
+export class HomeComponent implements CanComponenetDeactivate, OnInit {
 
   unSaved: boolean = true;
 
@@ -24,6 +26,11 @@ export class HomeComponent implements CanComponenetDeactivate {
     }
 
     return true;
+  }
+
+  ngOnInit() {
+    //cargar el js que controla los efectos de menu
+    initJsFromTs();
   }
 
   informacionCliente: InformacionCliente;

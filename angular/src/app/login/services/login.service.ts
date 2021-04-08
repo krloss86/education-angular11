@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { User } from './user';
+import { User } from '../models/user';
 import { map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
-@Injectable({
+@Injectable(/*{
   providedIn: 'root'
-})
+}*/)
 export class LoginService {
 
   private currentUserSubject: BehaviorSubject<User>;

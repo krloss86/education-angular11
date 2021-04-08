@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AlertService } from '../commons/services/alert.service';
-import { LoginService } from '../login.service';
+import { AlertService } from '../../commons/services/alert.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
         },
         error =>{
           // alert('User/Password invalid');
-          this.alertService.error('User/Password invalid');
+          // this.alertService.error('User/Password invalid');
           this.loading = false;
         }
       );
